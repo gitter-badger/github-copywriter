@@ -41,6 +41,26 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
 }
 
+/* anchor on hover */
+.header-link {
+    position: relative;
+    left: -0.25rem;
+    opacity: 0;
+}
+
+h2:hover .header-link,
+h3:hover .header-link,
+h4:hover .header-link,
+h5:hover .header-link,
+h6:hover .header-link {
+    opacity: 1;
+    top: -0.1rem;
+}
+h2:hover .header-link {
+    top: -0.25rem;
+}
+/* end anchor on hover */
+
 h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;

@@ -7,9 +7,11 @@
   <title>{{ site.title_tag_text }}</title>
   <link rel="shortcut icon" href="github-copywriter-favicon.png">
   <link href='//fonts.googleapis.com/css?family=Roboto:400,400italic,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/octicons/octicons.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/syntax.css">
   <link rel="stylesheet" href="css/solo.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -38,5 +40,16 @@
         ga('require', 'linkid', 'linkid.js');
         ga('send', 'pageview');
     }(this, this.document));
+</script>
+<script>
+$("h2, h3, h4, h5, h6").each(function(i, el) {
+    var $el, icon, id;
+    $el = $(el);
+    id = $el.attr("id");
+    icon = '<i class="octicon octicon-link"></i>';
+    if (id) {
+        return $el.prepend($("<a />").addClass("header-link").attr("href", "#"+id).html(icon));
+    }
+});
 </script>
 </html>
